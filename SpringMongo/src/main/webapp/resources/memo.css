@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+body{
+	font-family:Helvetica, sans-serif;
+	font-size:16px;
+	color:navy;
+}
+#wrap{
+	width:80%;
+	margin:auto;
+	/* border:1px solid red; */
+}
+#wrap table{
+	width:100%;
+	margin:2em auto; 
+	border-collapse:collapse;
+}
+#wrap table th{
+	background-color:#cfeffc;
+}
+#wrap td{
+	padding:5px;
+}
+#wrap td:first-child{
+	text-align:center;
+}
+#wrap td:nth-child(4n+3){
+	text-align:center;
+}
+#wrap td:nth-child(4n+4){
+	text-align:center;
+}
+#wrap input{
+	padding: 8px;
+	border: 1px solid silver;
+	width:80%;
+}
+#wrap button{
+	padding:5px;
+	background-color:beige;
+	width:150px;
+	border:1px solid silver;
+}
+span.wdate{
+	float:right;
+	margin-right:10px;
+}
+
+
+
+
