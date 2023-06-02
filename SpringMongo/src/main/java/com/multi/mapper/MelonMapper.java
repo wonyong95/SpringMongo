@@ -3,6 +3,7 @@ package com.multi.mapper;
 import java.util.List;
 
 import com.multi.domain.MelonVO;
+import com.multi.domain.SumVO;
 
 public interface MelonMapper {
 
@@ -15,6 +16,8 @@ public interface MelonMapper {
 	List<MelonVO> getMelonList(String collectionName) throws Exception;
 
 	int insertMelon(List<MelonVO> mList, String collectionName);
+
+	List<SumVO> getCntBySinger(String colName);
 
 
 }

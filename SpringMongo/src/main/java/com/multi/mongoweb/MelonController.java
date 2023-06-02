@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.common.CommonUtil;
 import com.multi.domain.MelonVO;
+import com.multi.domain.SumVO;
 import com.multi.service.MelonService;
 
 import lombok.extern.log4j.Log4j;
@@ -48,5 +49,11 @@ public class MelonController {
 	@GetMapping(value="list", produces="application/json")
 	public List<MelonVO> getMelonList() throws Exception {
 		return this.melonService.getMelonList();
+	}
+	//select singet, count(*) from melon_230602 group by singer having count(*) >1
+	@GetMapping(value="singerCnt", produces="application/json")
+	public List<SumVO> getSingersongCount() throws Exception{
+		List<SumVO> arr=this.melonService.getCntBySinger();
+		return arr;
 	}
 }

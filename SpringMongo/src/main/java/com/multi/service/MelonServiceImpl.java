@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.common.CommonUtil;
 import com.multi.domain.MelonVO;
 import com.multi.domain.MemoVO;
+import com.multi.domain.SumVO;
 import com.multi.mapper.MelonMapper;
 
 @Service("melonService")
@@ -65,13 +66,20 @@ public class MelonServiceImpl implements MelonService {
       return cnt;
    }
 
-@Override
-public List<MelonVO> getMelonList() throws Exception {
-	String colName="Melon_"+CommonUtil.getDateTime("yyMMdd");
+	@Override
+	public List<MelonVO> getMelonList() throws Exception {
+		String colName="Melon_"+CommonUtil.getDateTime("yyMMdd");
+		
+		return this.melonMapper.getMelonList(colName);
+	}
 	
-	return this.melonMapper.getMelonList(colName);
-}
-   
+	@Override
+	public List<SumVO> getCntBySinger() {
+		String colName="Melon_"+CommonUtil.getDateTime("yyMMdd");
+		
+		return this.melonMapper.getCntBySinger(colName);
+	}
+	   
    
 
-}
+	}
